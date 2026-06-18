@@ -33,15 +33,8 @@
             --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-sans);
@@ -52,14 +45,13 @@
             flex-direction: column;
             align-items: center;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             background-image:
                 radial-gradient(ellipse at 50% 0%, rgba(230, 57, 70, 0.06) 0%, transparent 65%),
                 radial-gradient(ellipse at 85% 15%, rgba(230, 57, 70, 0.04) 0%, transparent 55%);
             background-repeat: no-repeat;
         }
 
-        /* ────────────────── Admin DP ────────────────── */
+        /* ── Admin DP ── */
         .admin-dp-wrapper {
             position: fixed;
             top: 20px;
@@ -85,58 +77,35 @@
             overflow: hidden;
             user-select: none;
             -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
         }
 
         .admin-dp-trigger:hover {
             border-color: var(--red-primary);
-            box-shadow: 0 0 24px var(--red-glow), 0 6px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 24px var(--red-glow), 0 6px 20px rgba(0,0,0,0.5);
             transform: scale(1.06);
         }
 
-        .admin-dp-trigger:active {
-            transform: scale(0.94);
-            transition: all 0.1s ease;
-        }
+        .admin-dp-trigger:active { transform: scale(0.94); transition: all 0.1s ease; }
 
         .admin-dp-trigger img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
             border-radius: var(--radius-full);
         }
 
-        .admin-dp-trigger .dp-placeholder {
-            width: 100%;
-            height: 100%;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, #e63946 0%, #b71c1c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 17px;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
         .admin-dp-dot {
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            width: 11px;
-            height: 11px;
+            position: absolute; bottom: 0; right: 0;
+            width: 11px; height: 11px;
             background: #22c55e;
             border-radius: var(--radius-full);
             border: 2px solid var(--bg-primary);
             z-index: 2;
         }
 
-        /* ── Admin Popup Card ── */
         .admin-popup {
             position: absolute;
-            top: 56px;
-            right: 0;
+            top: 56px; right: 0;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
@@ -153,8 +122,7 @@
         }
 
         .admin-popup.active {
-            opacity: 1;
-            visibility: visible;
+            opacity: 1; visibility: visible;
             transform: translateY(0) scale(1);
             pointer-events: auto;
             border-color: var(--border-red);
@@ -162,8 +130,7 @@
         }
 
         .admin-popup .popup-photo {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             border-radius: var(--radius-full);
             object-fit: cover;
             border: 3px solid var(--red-primary);
@@ -172,52 +139,24 @@
             box-shadow: 0 0 28px var(--red-glow);
         }
 
-        .admin-popup .popup-photo-placeholder {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, #e63946 0%, #8b1a1a 100%);
-            margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-            color: #fff;
-            border: 3px solid var(--red-primary);
-            box-shadow: 0 0 28px var(--red-glow);
-            letter-spacing: 2px;
-        }
-
         .admin-popup .popup-name {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--text-primary);
-            margin-bottom: 14px;
-            letter-spacing: 0.3px;
+            font-weight: 700; font-size: 1.05rem;
+            color: var(--text-primary); margin-bottom: 14px;
         }
 
-        .admin-popup .popup-socials {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
+        .admin-popup .popup-socials { display: flex; gap: 10px; justify-content: center; }
 
         .admin-popup .popup-socials a {
-            display: flex;
-            align-items: center;
-            gap: 7px;
+            display: flex; align-items: center; gap: 7px;
             padding: 9px 15px;
             border-radius: var(--radius-full);
             background: var(--bg-secondary);
             color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
+            font-size: 0.85rem; font-weight: 500;
             border: 1px solid var(--border-color);
             transition: all var(--transition-fast);
             white-space: nowrap;
-            letter-spacing: 0.2px;
         }
 
         .admin-popup .popup-socials a:hover {
@@ -227,120 +166,76 @@
             transform: translateY(-2px);
         }
 
-        .admin-popup .popup-socials a svg {
-            width: 17px;
-            height: 17px;
-            flex-shrink: 0;
-        }
+        .admin-popup .popup-socials a svg { width: 17px; height: 17px; flex-shrink: 0; }
 
         .popup-close-btn {
-            position: absolute;
-            top: 8px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 4px 8px;
+            position: absolute; top: 8px; right: 10px;
+            background: none; border: none;
+            color: var(--text-muted); cursor: pointer;
+            font-size: 1.2rem; padding: 4px 8px;
             border-radius: var(--radius-sm);
-            transition: all var(--transition-fast);
-            line-height: 1;
+            transition: all var(--transition-fast); line-height: 1;
         }
 
-        .popup-close-btn:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.06);
-        }
+        .popup-close-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
 
-        /* ── Overlay (closes popup) ── */
         .popup-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 998;
-            display: none;
-            background: transparent;
+            position: fixed; inset: 0; z-index: 998;
+            display: none; background: transparent;
         }
+        .popup-overlay.active { display: block; }
 
-        .popup-overlay.active {
-            display: block;
-        }
-
-        /* ────────────────── Main Content ────────────────── */
+        /* ── Main ── */
         .main-container {
-            width: 100%;
-            max-width: 720px;
+            width: 100%; max-width: 720px;
             padding: 32px 20px 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            margin-top: 8vh;
+            display: flex; flex-direction: column; align-items: center;
+            flex: 1; margin-top: 8vh;
         }
 
-        .logo-area {
-            text-align: center;
-            margin-bottom: 36px;
-        }
+        .logo-area { text-align: center; margin-bottom: 36px; }
 
         .logo-text {
-            font-size: 2.6rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #fff;
-            line-height: 1;
+            font-size: 2.6rem; font-weight: 800;
+            letter-spacing: -1px; color: #fff; line-height: 1;
         }
-
-        .logo-text span {
-            color: var(--red-primary);
-            position: relative;
-        }
+        .logo-text span { color: var(--red-primary); }
 
         .logo-sub {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 6px;
-            letter-spacing: 0.5px;
-            font-weight: 400;
+            font-size: 0.9rem; color: var(--text-muted);
+            margin-top: 6px; letter-spacing: 0.5px; font-weight: 400;
         }
 
-        /* ── URL Input Section ── */
+        /* ── Input ── */
         .input-section {
             width: 100%;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             padding: 28px 26px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
             transition: all var(--transition-smooth);
         }
 
         .input-section:focus-within {
             border-color: var(--border-red);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--red-subtle), 0 0 48px var(--red-glow);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 0 0 1px var(--red-subtle), 0 0 48px var(--red-glow);
         }
 
         .input-label {
-            display: block;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            display: block; font-weight: 600;
+            font-size: 0.78rem; color: var(--text-secondary);
             margin-bottom: 10px;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .input-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+        .input-row { display: flex; gap: 10px; align-items: center; }
+
+        .url-input-wrapper { flex: 1; position: relative; display: flex; align-items: center; }
 
         .url-input {
             flex: 1;
-            padding: 14px 18px;
+            padding: 14px 40px 14px 18px;
             border-radius: var(--radius-full);
             border: 1px solid var(--border-color);
             background: var(--bg-input);
@@ -349,18 +244,26 @@
             font-family: var(--font-sans);
             outline: none;
             transition: all var(--transition-fast);
-            letter-spacing: 0.2px;
+            width: 100%;
         }
 
-        .url-input::placeholder {
-            color: var(--text-muted);
-            font-size: 0.88rem;
+        .url-input::placeholder { color: var(--text-muted); font-size: 0.88rem; }
+        .url-input:focus { border-color: var(--red-primary); box-shadow: 0 0 0 4px var(--red-subtle); }
+
+        /* Clear X button inside input */
+        .clear-input-btn {
+            position: absolute; right: 14px;
+            background: none; border: none;
+            color: var(--text-muted); cursor: pointer;
+            padding: 4px; border-radius: 50%;
+            display: none; align-items: center; justify-content: center;
+            transition: all var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .url-input:focus {
-            border-color: var(--red-primary);
-            box-shadow: 0 0 0 4px var(--red-subtle);
-        }
+        .clear-input-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
+        .clear-input-btn.visible { display: flex; }
+        .clear-input-btn svg { width: 14px; height: 14px; }
 
         .submit-btn {
             padding: 14px 26px;
@@ -368,130 +271,115 @@
             border: none;
             background: var(--red-primary);
             color: #fff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            white-space: nowrap;
+            font-weight: 700; font-size: 0.95rem;
+            cursor: pointer; white-space: nowrap;
             letter-spacing: 0.4px;
             transition: all var(--transition-fast);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
             -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 4px 18px rgba(230, 57, 70, 0.35);
+            box-shadow: 0 4px 18px rgba(230,57,70,0.35);
         }
 
         .submit-btn:hover {
             background: var(--red-hover);
-            box-shadow: 0 6px 26px rgba(230, 57, 70, 0.5);
+            box-shadow: 0 6px 26px rgba(230,57,70,0.5);
             transform: translateY(-1px);
         }
 
-        .submit-btn:active {
-            transform: scale(0.95);
-            transition: all 0.08s ease;
-            box-shadow: 0 2px 10px rgba(230, 57, 70, 0.3);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
+        .submit-btn:active { transform: scale(0.95); transition: all 0.08s ease; }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
 
         .submit-btn .spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2.5px solid rgba(255, 255, 255, 0.3);
+            display: none; width: 20px; height: 20px;
+            border: 2.5px solid rgba(255,255,255,0.3);
             border-top-color: #fff;
             border-radius: 50%;
             animation: spin 0.7s linear infinite;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
         }
 
-        .submit-btn.loading .btn-text {
-            visibility: hidden;
-        }
+        .submit-btn.loading .btn-text { visibility: hidden; }
+        .submit-btn.loading .spinner { display: block; }
 
-        .submit-btn.loading .spinner {
-            display: block;
-        }
+        @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
 
-        @keyframes spin {
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        /* ── Error message ── */
         .error-msg {
-            color: #f87171;
-            font-size: 0.82rem;
-            margin-top: 10px;
-            display: none;
-            align-items: center;
-            gap: 6px;
-            letter-spacing: 0.2px;
+            color: #f87171; font-size: 0.82rem;
+            margin-top: 10px; display: none;
+            align-items: center; gap: 6px;
         }
+        .error-msg.visible { display: flex; }
+        .error-msg svg { width: 15px; height: 15px; flex-shrink: 0; }
 
-        .error-msg.visible {
-            display: flex;
-        }
-
-        .error-msg svg {
-            width: 15px;
-            height: 15px;
-            flex-shrink: 0;
-        }
-
-        /* ────────────────── Transcript Section ────────────────── */
+        /* ── Transcript ── */
         .transcript-section {
-            width: 100%;
-            margin-top: 28px;
+            width: 100%; margin-top: 28px;
             display: none;
-            animation: fadeSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeSlideIn 0.4s cubic-bezier(0.4,0,0.2,1);
         }
-
-        .transcript-section.visible {
-            display: block;
-        }
+        .transcript-section.visible { display: block; }
 
         @keyframes fadeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .transcript-header {
-            display: flex;
-            align-items: center;
+            display: flex; align-items: center;
             justify-content: space-between;
             margin-bottom: 10px;
         }
 
         .transcript-title {
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 700; font-size: 0.95rem;
             color: var(--text-primary);
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: flex; align-items: center; gap: 8px;
         }
 
-        .transcript-title .icon-tick {
-            width: 20px;
-            height: 20px;
+        .transcript-title .icon-tick { width: 20px; height: 20px; color: #22c55e; }
+
+        /* Action buttons row — sits OUTSIDE the scrollable container */
+        .transcript-actions {
+            display: flex; gap: 8px;
+        }
+
+        .action-btn {
+            display: flex; align-items: center; gap: 6px;
+            padding: 7px 14px;
+            border-radius: var(--radius-full);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: all var(--transition-fast);
+            -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+            font-family: var(--font-sans);
+        }
+
+        .action-btn:hover {
+            border-color: var(--red-primary);
+            color: #fff;
+            background: var(--red-subtle);
+            box-shadow: 0 0 16px var(--red-glow);
+        }
+
+        .action-btn.copied {
+            border-color: #22c55e;
             color: #22c55e;
+            background: rgba(34,197,94,0.1);
+            box-shadow: 0 0 14px rgba(34,197,94,0.3);
+        }
+
+        .action-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+        /* Hide label on small screens for icon-only look */
+        @media (max-width: 400px) {
+            .action-btn .btn-label { display: none; }
+            .action-btn { padding: 7px 10px; }
         }
 
         .transcript-container {
@@ -501,13 +389,11 @@
             border-radius: var(--radius-md);
             max-height: 480px;
             overflow-y: auto;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
-            transition: all var(--transition-smooth);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+            transition: border-color var(--transition-smooth);
         }
 
-        .transcript-container:hover {
-            border-color: var(--border-red);
-        }
+        .transcript-container:hover { border-color: var(--border-red); }
 
         .transcript-text {
             padding: 22px 20px;
@@ -521,122 +407,58 @@
         }
 
         /* Scrollbar */
-        .transcript-container::-webkit-scrollbar {
-            width: 6px;
-        }
+        .transcript-container::-webkit-scrollbar { width: 6px; }
+        .transcript-container::-webkit-scrollbar-track { background: transparent; }
+        .transcript-container::-webkit-scrollbar-thumb { background: #333; border-radius: 20px; }
+        .transcript-container::-webkit-scrollbar-thumb:hover { background: #555; }
 
-        .transcript-container::-webkit-scrollbar-track {
-            background: transparent;
-            border-radius: 20px;
+        /* Word count */
+        .transcript-meta {
+            display: flex; align-items: center;
+            gap: 12px; margin-top: 8px;
+            font-size: 0.75rem; color: var(--text-muted);
         }
+        .transcript-meta span { display: flex; align-items: center; gap: 4px; }
 
-        .transcript-container::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 20px;
-        }
-
-        .transcript-container::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        /* ── Copy Button ── */
-        .copy-btn {
-            position: absolute;
-            top: 12px;
-            right: 14px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: var(--radius-full);
-            background: var(--bg-secondary);
+        /* ── Toast notification ── */
+        .toast {
+            position: fixed; bottom: 28px; left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            transition: all var(--transition-fast);
-            -webkit-tap-highlight-color: transparent;
-            backdrop-filter: blur(8px);
+            color: var(--text-primary);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem; font-weight: 500;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            pointer-events: none;
+            z-index: 9999;
             white-space: nowrap;
         }
-
-        .copy-btn:hover {
-            border-color: var(--red-primary);
-            color: #fff;
-            background: var(--red-subtle);
-            box-shadow: 0 0 16px var(--red-glow);
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
+        .toast.success { border-color: rgba(34,197,94,0.5); color: #86efac; }
+        .toast.error { border-color: var(--border-red); color: #fca5a5; }
 
-        .copy-btn.copied {
-            border-color: #22c55e;
-            color: #22c55e;
-            background: rgba(34, 197, 94, 0.1);
-            box-shadow: 0 0 14px rgba(34, 197, 94, 0.3);
-        }
-
-        .copy-btn svg {
-            width: 15px;
-            height: 15px;
-            flex-shrink: 0;
-        }
-
-        .copy-btn .copy-icon-default {
-            display: block;
-        }
-
-        .copy-btn .copy-icon-check {
-            display: none;
-        }
-
-        .copy-btn.copied .copy-icon-default {
-            display: none;
-        }
-
-        .copy-btn.copied .copy-icon-check {
-            display: block;
-        }
-
-        /* ── Word count ── */
-        .transcript-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 8px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.2px;
-        }
-
-        .transcript-meta span {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* ────────────────── Footer / Contact Developer ────────────────── */
+        /* ── Footer ── */
         .footer-section {
-            width: 100%;
-            max-width: 720px;
+            width: 100%; max-width: 720px;
             padding: 20px 20px 32px;
-            text-align: center;
-            margin-top: auto;
+            text-align: center; margin-top: auto;
         }
 
         .contact-dev-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-flex; align-items: center; gap: 8px;
             padding: 12px 22px;
             border-radius: var(--radius-full);
             background: transparent;
             border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
+            color: var(--text-muted); cursor: pointer;
+            font-size: 0.85rem; font-weight: 500;
             letter-spacing: 0.3px;
             transition: all var(--transition-fast);
             text-decoration: none;
@@ -651,177 +473,94 @@
             transform: translateY(-1px);
         }
 
-        .contact-dev-btn svg {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
+        .contact-dev-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         .footer-credit {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-top: 12px;
-            letter-spacing: 0.4px;
-            opacity: 0.6;
+            font-size: 0.7rem; color: var(--text-muted);
+            margin-top: 12px; letter-spacing: 0.4px; opacity: 0.6;
         }
 
-        /* ────────────────── Responsive ────────────────── */
+        /* ── Responsive ── */
         @media (max-width: 600px) {
-            .main-container {
-                padding: 20px 14px 30px;
-                margin-top: 4vh;
-            }
-
-            .logo-text {
-                font-size: 2rem;
-            }
-
-            .input-section {
-                padding: 20px 16px;
-                border-radius: var(--radius-md);
-            }
-
-            .input-row {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .url-input {
-                width: 100%;
-                border-radius: var(--radius-full);
-                padding: 13px 16px;
-                font-size: 0.9rem;
-            }
-
-            .submit-btn {
-                width: 100%;
-                border-radius: var(--radius-full);
-                padding: 13px;
-                justify-content: center;
-                display: flex;
-                align-items: center;
-            }
-
-            .admin-dp-wrapper {
-                top: 12px;
-                right: 12px;
-            }
-
-            .admin-dp-trigger {
-                width: 38px;
-                height: 38px;
-            }
-
-            .admin-popup {
-                right: -8px;
-                min-width: 210px;
-                padding: 18px 14px 14px;
-                border-radius: var(--radius-md);
-            }
-
-            .transcript-container {
-                max-height: 360px;
-                border-radius: var(--radius-sm);
-            }
-
-            .transcript-text {
-                padding: 16px 14px;
-                font-size: 0.82rem;
-            }
-
-            .copy-btn {
-                top: 8px;
-                right: 8px;
-                padding: 6px 12px;
-                font-size: 0.72rem;
-            }
-
-            .copy-btn .btn-text-copy {
-                display: none;
-            }
-
-            .copy-btn svg {
-                width: 14px;
-                height: 14px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .logo-text {
-                font-size: 1.7rem;
-            }
-
-            .admin-popup {
-                right: -20px;
-                min-width: 190px;
-            }
+            .main-container { padding: 20px 14px 30px; margin-top: 4vh; }
+            .logo-text { font-size: 2rem; }
+            .input-section { padding: 20px 16px; border-radius: var(--radius-md); }
+            .input-row { flex-direction: column; gap: 10px; }
+            .url-input-wrapper { width: 100%; }
+            .url-input { padding: 13px 40px 13px 16px; font-size: 0.9rem; }
+            .submit-btn { width: 100%; border-radius: var(--radius-full); padding: 13px; justify-content: center; display: flex; align-items: center; }
+            .admin-dp-wrapper { top: 12px; right: 12px; }
+            .admin-dp-trigger { width: 38px; height: 38px; }
+            .admin-popup { right: -8px; min-width: 210px; padding: 18px 14px 14px; border-radius: var(--radius-md); }
+            .transcript-container { max-height: 360px; border-radius: var(--radius-sm); }
+            .transcript-text { padding: 16px 14px; font-size: 0.82rem; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ─────────────── Admin DP (Top Right) ─────────────── -->
+    <!-- Admin DP -->
     <div class="admin-dp-wrapper" id="adminDpWrapper">
         <div class="admin-dp-trigger" id="adminDpTrigger" title="Admin Profile">
-            <!-- Replace src with actual image URL -->
             <img src="https://rudra-xploits.netlify.app/pranjal_pic.png" alt="Admin DP">
-            <!-- <div class="dp-placeholder">AD</div> -->
             <div class="admin-dp-dot"></div>
         </div>
-        <!-- Popup Card -->
         <div class="admin-popup" id="adminPopup">
-            <button class="popup-close-btn" id="popupCloseBtn" title="Close">&times;</button>
-            <!-- Replace src with actual large photo URL -->
+            <button class="popup-close-btn" id="popupCloseBtn">&times;</button>
             <img class="popup-photo" src="https://rudra-xploits.netlify.app/pranjal_pic.png" alt="Admin Photo">
-            <!-- <div class="popup-photo-placeholder">AD</div> -->
             <div class="popup-name">Pranjal Saini</div>
             <div class="popup-socials">
-                <!-- GitHub -->
-                <a href="https://github.com/avan-codes" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <a href="https://github.com/avan-codes" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z" />
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/>
                     </svg>
                     GitHub
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/pranjal-saini" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/pranjal-saini" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                     LinkedIn
                 </a>
             </div>
         </div>
     </div>
-    <!-- Overlay to close popup when clicking outside -->
     <div class="popup-overlay" id="popupOverlay"></div>
 
-    <!-- ─────────────── Main Content ─────────────── -->
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Main -->
     <div class="main-container">
-        <!-- Logo -->
         <div class="logo-area">
             <div class="logo-text">Geoid<span>X</span></div>
             <div class="logo-sub">YouTube Transcript Fetcher</div>
         </div>
 
-        <!-- URL Input -->
         <div class="input-section" id="inputSection">
-            <label class="input-label" for="youtubeUrl">Enter YouTube Video URL</label>
+            <label class="input-label" for="youtubeUrl">YouTube Video URL</label>
             <div class="input-row">
-                <input type="url" id="youtubeUrl" class="url-input" placeholder="https://www.youtube.com/watch?v=..."
-                    autocomplete="off" spellcheck="false">
+                <div class="url-input-wrapper">
+                    <input type="url" id="youtubeUrl" class="url-input"
+                        placeholder="https://www.youtube.com/watch?v=..."
+                        autocomplete="off" spellcheck="false">
+                    <button class="clear-input-btn" id="clearInputBtn" title="Clear">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
                 <button class="submit-btn" id="submitBtn" type="button">
-                    <span class="btn-text">Fetch Transcript</span>
+                    <span class="btn-text">Fetch</span>
                     <div class="spinner"></div>
                 </button>
             </div>
             <div class="error-msg" id="errorMsg">
                 <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z" />
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-10v6h2V7h-2z"/>
                 </svg>
                 <span id="errorText"></span>
             </div>
@@ -832,38 +571,52 @@
             <div class="transcript-header">
                 <div class="transcript-title">
                     <svg class="icon-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                        <polyline points="22 4 12 14.01 9 11.01" />
+                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
                     Transcript
                 </div>
+                <!-- Action buttons outside the scroll container — no more bug! -->
+                <div class="transcript-actions">
+                    <button class="action-btn" id="copyBtn" title="Copy to clipboard">
+                        <svg id="copyIconDefault" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                        </svg>
+                        <svg id="copyIconCheck" style="display:none" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <span class="btn-label" id="copyLabel">Copy</span>
+                    </button>
+                    <button class="action-btn" id="downloadBtn" title="Download as .txt">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span class="btn-label">Save</span>
+                    </button>
+                </div>
             </div>
+
             <div class="transcript-container" id="transcriptContainer">
-                <button class="copy-btn" id="copyBtn" title="Copy transcript">
-                    <svg class="copy-icon-default" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                    </svg>
-                    <svg class="copy-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span class="btn-text-copy">Copy</span>
-                </button>
                 <div class="transcript-text" id="transcriptText"></div>
             </div>
+
             <div class="transcript-meta" id="transcriptMeta"></div>
         </div>
     </div>
 
-    <!-- ─────────────── Footer / Contact Developer ─────────────── -->
+    <!-- Footer -->
     <div class="footer-section">
-        <a class="contact-dev-btn" href="mailto:developer@geoidx.com" title="Contact Developer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M22 4L12 13 2 4" />
+        <a class="contact-dev-btn" href="mailto:developer@geoidx.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M22 4L12 13 2 4"/>
             </svg>
             Contact Developer
         </a>
@@ -871,289 +624,237 @@
     </div>
 
     <script>
-        (function () {
-            // ─────────── CONFIG ───────────
-            const API_BASE = 'https://geoidx-backend.onrender.com'; // Change to your FastAPI server URL
+    (function () {
+        const API_BASE = 'https://geoidx-backend.onrender.com';
 
-            // ─────────── DOM ELEMENTS ───────────
-            const youtubeUrlInput = document.getElementById('youtubeUrl');
-            const submitBtn = document.getElementById('submitBtn');
-            const errorMsg = document.getElementById('errorMsg');
-            const errorText = document.getElementById('errorText');
-            const transcriptSection = document.getElementById('transcriptSection');
-            const transcriptContainer = document.getElementById('transcriptContainer');
-            const transcriptTextEl = document.getElementById('transcriptText');
-            const transcriptMeta = document.getElementById('transcriptMeta');
-            const copyBtn = document.getElementById('copyBtn');
-            const adminDpTrigger = document.getElementById('adminDpTrigger');
-            const adminPopup = document.getElementById('adminPopup');
-            const popupOverlay = document.getElementById('popupOverlay');
-            const popupCloseBtn = document.getElementById('popupCloseBtn');
+        // DOM
+        const youtubeUrlInput = document.getElementById('youtubeUrl');
+        const submitBtn       = document.getElementById('submitBtn');
+        const clearInputBtn   = document.getElementById('clearInputBtn');
+        const errorMsg        = document.getElementById('errorMsg');
+        const errorText       = document.getElementById('errorText');
+        const transcriptSection   = document.getElementById('transcriptSection');
+        const transcriptContainer = document.getElementById('transcriptContainer');
+        const transcriptTextEl    = document.getElementById('transcriptText');
+        const transcriptMeta      = document.getElementById('transcriptMeta');
+        const copyBtn         = document.getElementById('copyBtn');
+        const copyLabel       = document.getElementById('copyLabel');
+        const copyIconDefault = document.getElementById('copyIconDefault');
+        const copyIconCheck   = document.getElementById('copyIconCheck');
+        const downloadBtn     = document.getElementById('downloadBtn');
+        const toast           = document.getElementById('toast');
+        const adminDpTrigger  = document.getElementById('adminDpTrigger');
+        const adminPopup      = document.getElementById('adminPopup');
+        const popupOverlay    = document.getElementById('popupOverlay');
+        const popupCloseBtn   = document.getElementById('popupCloseBtn');
 
-            let currentTranscript = '';
-            let copyTimeout = null;
+        let currentTranscript = '';
+        let copyTimeout = null;
+        let toastTimeout = null;
 
-            // ─────────── ADMIN POPUP LOGIC ───────────
-            function openAdminPopup() {
-                adminPopup.classList.add('active');
-                popupOverlay.classList.add('active');
-            }
+        // ── Toast ──
+        function showToast(msg, type = 'success') {
+            toast.textContent = msg;
+            toast.className = 'toast ' + type + ' show';
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => { toast.classList.remove('show'); }, 2400);
+        }
 
-            function closeAdminPopup() {
-                adminPopup.classList.remove('active');
-                popupOverlay.classList.remove('active');
-            }
+        // ── Admin Popup ──
+        function openAdminPopup()  { adminPopup.classList.add('active');    popupOverlay.classList.add('active'); }
+        function closeAdminPopup() { adminPopup.classList.remove('active'); popupOverlay.classList.remove('active'); }
 
-            function toggleAdminPopup() {
-                if (adminPopup.classList.contains('active')) {
-                    closeAdminPopup();
-                } else {
-                    openAdminPopup();
-                }
-            }
+        adminDpTrigger.addEventListener('click', (e) => { e.stopPropagation(); adminPopup.classList.contains('active') ? closeAdminPopup() : openAdminPopup(); });
+        popupCloseBtn.addEventListener('click',  (e) => { e.stopPropagation(); closeAdminPopup(); });
+        popupOverlay.addEventListener('click', closeAdminPopup);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAdminPopup(); });
 
-            adminDpTrigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleAdminPopup();
+        // ── Clear input button ──
+        youtubeUrlInput.addEventListener('input', () => {
+            clearInputBtn.classList.toggle('visible', youtubeUrlInput.value.length > 0);
+            if (errorMsg.classList.contains('visible')) hideError();
+        });
+
+        // Select-all on click for quick replace
+        youtubeUrlInput.addEventListener('click', function() {
+            if (this.value) this.select();
+        });
+
+        clearInputBtn.addEventListener('click', () => {
+            youtubeUrlInput.value = '';
+            clearInputBtn.classList.remove('visible');
+            hideError();
+            youtubeUrlInput.focus();
+        });
+
+        // ── Validation ──
+        function isValidYouTubeUrl(url) {
+            if (!url || typeof url !== 'string') return false;
+            const trimmed = url.trim();
+            const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)[\w\-]{11}([?&][^\s]*)?$/i;
+            return pattern.test(trimmed);
+        }
+
+        function showError(message) { errorText.textContent = message; errorMsg.classList.add('visible'); }
+        function hideError()        { errorMsg.classList.remove('visible'); errorText.textContent = ''; }
+
+        // ── Fetch ──
+        async function fetchTranscript(url) {
+            const res = await fetch(`${API_BASE}/gettranscript`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ URL: url.trim() }),
             });
 
-            popupCloseBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                closeAdminPopup();
-            });
-
-            popupOverlay.addEventListener('click', closeAdminPopup);
-
-            // Close popup on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && adminPopup.classList.contains('active')) {
-                    closeAdminPopup();
-                }
-            });
-
-            // ─────────── VALIDATION ───────────
-            function isValidYouTubeUrl(url) {
-                if (!url || typeof url !== 'string') return false;
-                const trimmed = url.trim();
-                if (!trimmed) return false;
-                // Match common YouTube URL patterns
-                const pattern =
-                    /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)[\w\-]{11}([?&][^\s]*)?$/i;
-                return pattern.test(trimmed);
+            if (!res.ok) {
+                let detail = 'Failed to retrieve transcript.';
+                try { const e = await res.json(); if (e && e.detail) detail = e.detail; } catch (_) {}
+                throw new Error(detail);
             }
+            return await res.json();
+        }
 
-            function showError(message) {
-                errorText.textContent = message;
-                errorMsg.classList.add('visible');
+        function extractTranscriptText(data) {
+            if (typeof data === 'string') return data;
+            if (data && typeof data === 'object') {
+                if (data.content && typeof data.content === 'string') return data.content;
+                if (data.text && typeof data.text === 'string') return data.text;
+                if (data.transcript && typeof data.transcript === 'string') return data.transcript;
+                if (data.data && typeof data.data === 'string') return data.data;
+                if (Array.isArray(data.content)) return data.content.map(p => p.text || p.content || '').join(' ');
+                if (Array.isArray(data.parts))   return data.parts.map(p => p.text || p.content || '').join(' ');
+                return JSON.stringify(data, null, 2);
             }
+            return String(data || '');
+        }
 
-            function hideError() {
-                errorMsg.classList.remove('visible');
-                errorText.textContent = '';
+        function displayTranscript(rawData) {
+            const text = extractTranscriptText(rawData);
+            currentTranscript = text;
+            transcriptTextEl.textContent = text;
+            transcriptSection.classList.add('visible');
+
+            const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
+            const charCount = text.length;
+            transcriptMeta.innerHTML = `
+                <span>📝 ${wordCount.toLocaleString()} words</span>
+                <span>🔤 ${charCount.toLocaleString()} chars</span>
+            `;
+
+            transcriptContainer.scrollTop = 0;
+            resetCopyButton();
+            transcriptSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function hideTranscript() {
+            transcriptSection.classList.remove('visible');
+            currentTranscript = '';
+            transcriptTextEl.textContent = '';
+            transcriptMeta.innerHTML = '';
+            resetCopyButton();
+        }
+
+        // ── Copy ──
+        function resetCopyButton() {
+            copyBtn.classList.remove('copied');
+            copyIconDefault.style.display = '';
+            copyIconCheck.style.display   = 'none';
+            copyLabel.textContent = 'Copy';
+            if (copyTimeout) { clearTimeout(copyTimeout); copyTimeout = null; }
+        }
+
+        async function handleCopy() {
+            if (!currentTranscript.trim()) return;
+            try {
+                await navigator.clipboard.writeText(currentTranscript);
+            } catch (_) {
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = currentTranscript;
+                ta.style.cssText = 'position:fixed;opacity:0;';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
             }
+            // Visual feedback on button
+            copyBtn.classList.add('copied');
+            copyIconDefault.style.display = 'none';
+            copyIconCheck.style.display   = '';
+            copyLabel.textContent = 'Copied!';
+            showToast('Transcript copied to clipboard', 'success');
+            if (copyTimeout) clearTimeout(copyTimeout);
+            copyTimeout = setTimeout(resetCopyButton, 2200);
+        }
 
-            // ─────────── FETCH TRANSCRIPT ───────────
-            async function fetchTranscript(url) {
-                const trimmedUrl = url.trim();
-                const response = await fetch(`${API_BASE}/gettranscript`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ URL: trimmedUrl }),
-                });
+        // ── Download ──
+        function handleDownload() {
+            if (!currentTranscript.trim()) return;
+            const blob = new Blob([currentTranscript], { type: 'text/plain;charset=utf-8' });
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
+            a.href     = url;
+            a.download = 'transcript.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Saved as transcript.txt', 'success');
+        }
 
-                if (!response.ok) {
-                    let detail = 'Failed to retrieve transcript.';
-                    try {
-                        const errData = await response.json();
-                        if (errData && errData.detail) {
-                            detail = errData.detail;
-                        }
-                    } catch (_) {
-                        // ignore parse error
-                    }
-                    throw new Error(detail);
-                }
+        copyBtn.addEventListener('click', handleCopy);
+        downloadBtn.addEventListener('click', handleDownload);
 
-                const data = await response.json();
-                return data;
-            }
+        // ── Submit ──
+        async function handleSubmit() {
+            const url = youtubeUrlInput.value;
 
-            function extractTranscriptText(data) {
-                // Handle various response shapes from Supadata
-                if (typeof data === 'string') return data;
-                if (data && typeof data === 'object') {
-                    if (data.content && typeof data.content === 'string') return data.content;
-                    if (data.text && typeof data.text === 'string') return data.text;
-                    if (data.transcript && typeof data.transcript === 'string') return data.transcript;
-                    if (data.data && typeof data.data === 'string') return data.data;
-                    // If there's a 'parts' array or similar
-                    if (Array.isArray(data.content)) {
-                        return data.content.map(p => p.text || p.content || '').join(' ');
-                    }
-                    if (Array.isArray(data.parts)) {
-                        return data.parts.map(p => p.text || p.content || '').join(' ');
-                    }
-                    // Last resort: stringify
-                    return JSON.stringify(data, null, 2);
-                }
-                return String(data || '');
-            }
-
-            function displayTranscript(rawData) {
-                const text = extractTranscriptText(rawData);
-                currentTranscript = text;
-                transcriptTextEl.textContent = text;
-                transcriptSection.classList.add('visible');
-
-                // Word & character count
-                const charCount = text.length;
-                const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
-                transcriptMeta.innerHTML = `
-                            <span>📝 ${wordCount.toLocaleString()} words</span>
-                            <span>🔤 ${charCount.toLocaleString()} characters</span>
-                        `;
-
-                // Scroll transcript container to top
-                transcriptContainer.scrollTop = 0;
-
-                // Reset copy button state
-                resetCopyButton();
-
-                // Smooth scroll to transcript
-                transcriptSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-
-            function hideTranscript() {
-                transcriptSection.classList.remove('visible');
-                currentTranscript = '';
-                transcriptTextEl.textContent = '';
-                transcriptMeta.innerHTML = '';
-                resetCopyButton();
-            }
-
-            // ─────────── COPY BUTTON ───────────
-            function resetCopyButton() {
-                copyBtn.classList.remove('copied');
-                if (copyTimeout) clearTimeout(copyTimeout);
-                copyTimeout = null;
-            }
-
-            async function handleCopy() {
-                if (!currentTranscript || !currentTranscript.trim()) return;
-                try {
-                    await navigator.clipboard.writeText(currentTranscript);
-                    copyBtn.classList.add('copied');
-                    if (copyTimeout) clearTimeout(copyTimeout);
-                    copyTimeout = setTimeout(() => {
-                        copyBtn.classList.remove('copied');
-                        copyTimeout = null;
-                    }, 2200);
-                } catch (err) {
-                    // Fallback for older browsers
-                    const textarea = document.createElement('textarea');
-                    textarea.value = currentTranscript;
-                    textarea.style.position = 'fixed';
-                    textarea.style.opacity = '0';
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    try {
-                        document.execCommand('copy');
-                        copyBtn.classList.add('copied');
-                        if (copyTimeout) clearTimeout(copyTimeout);
-                        copyTimeout = setTimeout(() => {
-                            copyBtn.classList.remove('copied');
-                            copyTimeout = null;
-                        }, 2200);
-                    } catch (_) {
-                        // Copy failed silently
-                    }
-                    document.body.removeChild(textarea);
-                }
-            }
-
-            copyBtn.addEventListener('click', handleCopy);
-
-            // ─────────── SUBMIT HANDLER ───────────
-            async function handleSubmit() {
-                const url = youtubeUrlInput.value;
-
-                // Validate
-                if (!url || !url.trim()) {
-                    showError('Please enter a YouTube URL.');
-                    youtubeUrlInput.focus();
-                    return;
-                }
-                if (!isValidYouTubeUrl(url)) {
-                    showError('Please enter a valid YouTube video URL (e.g., https://www.youtube.com/watch?v=...).');
-                    youtubeUrlInput.focus();
-                    return;
-                }
-
-                hideError();
-                hideTranscript();
-
-                // Loading state
-                submitBtn.classList.add('loading');
-                submitBtn.disabled = true;
-                youtubeUrlInput.disabled = true;
-
-                try {
-                    const rawData = await fetchTranscript(url);
-                    displayTranscript(rawData);
-                } catch (err) {
-                    console.error('Transcript fetch error:', err);
-                    let message = 'Something went wrong. Please try again.';
-                    if (err.message) {
-                        message = err.message;
-                    }
-                    if (err.name === 'TypeError' && err.message.includes('Failed to fetch')) {
-                        message =
-                            'Unable to connect to the server. Make sure the backend is running at ' + API_BASE;
-                    }
-                    showError(message);
-                    hideTranscript();
-                } finally {
-                    // Reset loading state
-                    submitBtn.classList.remove('loading');
-                    submitBtn.disabled = false;
-                    youtubeUrlInput.disabled = false;
-                    youtubeUrlInput.focus();
-                }
-            }
-
-            submitBtn.addEventListener('click', handleSubmit);
-
-            // Enter key triggers submit
-            youtubeUrlInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleSubmit();
-                }
-            });
-
-            // Clear error on input
-            youtubeUrlInput.addEventListener('input', () => {
-                if (errorMsg.classList.contains('visible')) {
-                    hideError();
-                }
-            });
-
-            // ─────────── INITIAL FOCUS ───────────
-            // Slight delay to ensure page is ready
-            setTimeout(() => {
+            if (!url || !url.trim()) {
+                showError('Please enter a YouTube URL.');
                 youtubeUrlInput.focus();
-            }, 300);
+                return;
+            }
+            if (!isValidYouTubeUrl(url)) {
+                showError('Enter a valid YouTube URL (e.g., youtube.com/watch?v=...)');
+                youtubeUrlInput.focus();
+                return;
+            }
 
-            console.log('%c🚀 GeoidX %cFrontend Ready %c| %cAPI: ' + API_BASE,
-                'color:#e63946;font-weight:bold;font-size:1.2rem;',
-                'color:#fff;',
-                'color:#888;',
-                'color:#e63946;');
-            console.log('%c🎯 Click the admin DP in the top-right corner!', 'color:#b0b0b0;font-style:italic;');
-        })();
+            hideError();
+            hideTranscript();
+
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            youtubeUrlInput.disabled = true;
+            clearInputBtn.style.display = 'none';
+
+            try {
+                const rawData = await fetchTranscript(url);
+                displayTranscript(rawData);
+            } catch (err) {
+                let message = 'Something went wrong. Please try again.';
+                if (err.message) message = err.message;
+                if (err.name === 'TypeError' && err.message.includes('Failed to fetch'))
+                    message = 'Cannot reach server. Is the backend running?';
+                showError(message);
+                hideTranscript();
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                youtubeUrlInput.disabled = false;
+                clearInputBtn.classList.toggle('visible', youtubeUrlInput.value.length > 0);
+                youtubeUrlInput.focus();
+            }
+        }
+
+        submitBtn.addEventListener('click', handleSubmit);
+        youtubeUrlInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); handleSubmit(); } });
+
+        // Initial focus
+        setTimeout(() => youtubeUrlInput.focus(), 300);
+
+        console.log('%c🚀 GeoidX %cReady', 'color:#e63946;font-weight:bold;font-size:1.2rem;', 'color:#fff;');
+    })();
     </script>
 </body>
-
 </html>
